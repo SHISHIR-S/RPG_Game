@@ -1,0 +1,23 @@
+.titlee{
+    margin-top:0;
+    padding-top:0;
+    background-color: red;
+    text-align:justify;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border:0cap;
+}
+nav{
+    background-color: black;
+    padding:20px;
+    text-align: justify;
+    justify-content:baseline;
+}
+nav a{
+    text-decoration: none;
+    color:white;
+    float:left;
+    margin-right:20px;
+}
+nav a:last-child{
+    margin-right:0;
+}

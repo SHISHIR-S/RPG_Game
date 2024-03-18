@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADVENTURE AND MYSTERIES <i class="fas fa-rupee-sign    "></i></title>
+    <link rel="stylesheet" href="rpgpage.css">
+</head>
+<body>
+    <div class="Header">
+        <h1 class="titlee">WELCOME TO THE RPG GAME</h1>
+        <nav>
+            <a href="http://127.0.0.1:5500/rpgpage.html#" rel="noopener noreferrer">Home</a>
+            <a href="https://www.youtube.com/watch?v=bANjQqUVgvM" target="_blank" rel="noopener noreferrer">Enjoy some music</a>
+            <a href="#">Reset Game</a>
+        </nav>
+    </div>
+    <div class="content">
+        <p>Let's walk through the game.This is a simple game based on Adventure and Murder Mystery.<br> You can choose your fvourite choice by Entering you username and saying if you're ready or not.<br> You shall not be disappointed</p>
+        <span id="namee">Enter your name: <input type="text" id="getname"><button id="namebtn">Submit</button></span>
+        <p id="greet"> </p>
+        <script>
+            let inpname = document.getElementById("getname");
+            let greetObj=document.getElementById("greet");
+            greetObj.style.display="none";
+            document.addEventListener('DOMContentLoaded', (event) => {
+                document.getElementById("namebtn").onclick=function greetdisplay(){
+                    if(getname.value===""){
+                        window.alert("Please enter a name");
+                    }
+                    else{
+                        greetObj.style.display="block";
+                        greetObj.innerHTML+="Hello, Nice to meet you  "+inpname.value+".";
+                    }
+                    }
+            });
+            
+</script>
+    </div>
+    
+</body>
+</html>
