@@ -23,16 +23,9 @@ nav a:last-child{
 }
 .boxdiv{
     width:300px;
-    height:100px;
-    border:2px solid grey;
-    padding:20px;
-    background-color: lightgray;
-}
-#namee{
-    width:50px;
     height:200px;
     border:2px solid grey;
     padding:20px;
     background-color: lightgray;
-
 }
+
