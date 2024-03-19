@@ -16,10 +16,19 @@
         </nav>
     </div>
     <div class="content">
-        <p>Let's walk through the game.This is a simple game based on Adventure and Murder Mystery.<br> You can choose your fvourite choice by Entering you username and saying if you're ready or not.<br> You shall not be disappointed</p>
-        <span id="namee">Enter your name: <input type="text" id="getname"><button id="namebtn">Submit</button></span>
-        <p id="greet"> </p>
+        <p>Let's walk through the game.This is a simple game based on Adventure and Murder Mystery.<br> You can choose your fvourite choice by Entering you username and saying if you're ready or not.<br> You shall not be disappointed</p><br>
+        <span id="namee">Enter your name: <input type="text" id="getname"><button id="namebtn">Submit</button></span><br>
+        <div><p id="greet"> </p> </div>
+        <div class="boxdiv">
+            <p>Choose the Genre you want</p>
+            <button type="button" id="advbtn">Adventure games</button> 
+            <button type="button" id="mysbtn">Mystery games</button>
+        </div>
+        <p id="advspn"></p>
+        <p id="mysspn"></p>
         <script>
+            const advbtn = document.getElementById("advbtn");
+            const mysbtn = document.getElementById("mysbtn");
             let inpname = document.getElementById("getname");
             let greetObj=document.getElementById("greet");
             greetObj.style.display="none";
@@ -33,9 +42,19 @@
                         greetObj.innerHTML+="Hello, Nice to meet you  "+inpname.value+".";
                     }
                     }
-            });
+                advbtn.onclick=
+                    function advtxt() {
+                        const advspn = document.getElementById("advspn")
+                        advspn.textContent = "Deep within the ancient forest, A brave adventurer seeks his fate. With sword in hand and heart alight, He journeys forth into the night.";
+    }
+                mysbtn.onclick=
+                    function mystxt() {
+                        const mysspn = document.getElementById("mysspn")
+                        mysspn.textContent = "In the shadow of an eerie mansion, Whispers of a long-forgotten crime. With clues scattered like fallen leaves, The detective delves, unraveling deceit.";
+    }        
+            }); 
             
-</script>
+</script> 
     </div>
     
 </body>
