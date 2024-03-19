@@ -24,8 +24,10 @@
             <button type="button" id="advbtn">Adventure games</button> 
             <button type="button" id="mysbtn">Mystery games</button>
         </div>
-        <p id="advspn"></p>
-        <p id="mysspn"></p>
+        <div class="spnbox">
+            <p id="advspn"></p>
+            <p id="mysspn"></p>
+        </div>
         <script>
             const advbtn = document.getElementById("advbtn");
             const mysbtn = document.getElementById("mysbtn");
@@ -40,19 +42,23 @@
                     else{
                         greetObj.style.display="block";
                         greetObj.innerHTML+="Hello, Nice to meet you  "+inpname.value+".";
+                        namebtn.disabled="true"
                     }
                     }
                 advbtn.onclick=
                     function advtxt() {
                         const advspn = document.getElementById("advspn")
                         advspn.textContent = "Deep within the ancient forest, A brave adventurer seeks his fate. With sword in hand and heart alight, He journeys forth into the night.";
-    }
+                        mysbtn.disabled="true";
+                        advbtn.disabled="true";
+                    }
                 mysbtn.onclick=
                     function mystxt() {
                         const mysspn = document.getElementById("mysspn")
                         mysspn.textContent = "In the shadow of an eerie mansion, Whispers of a long-forgotten crime. With clues scattered like fallen leaves, The detective delves, unraveling deceit.";
-    }    
-
+                        mysbtn.disabled="true";
+                        advbtn.disabled="true";
+                    }  
             }); 
             
 </script> 

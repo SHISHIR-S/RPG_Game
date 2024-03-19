@@ -28,4 +28,8 @@ nav a:last-child{
     padding:20px;
     background-color: lightgray;
 }
-
+.spnbox{
+    width:300px;
+    height:100px;
+    border:2px solid black;
+}
