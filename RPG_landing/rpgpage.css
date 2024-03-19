@@ -33,3 +33,7 @@ nav a:last-child{
     height:100px;
     border:2px solid black;
 }
+#opt1,#opt2{
+    width:90px;
+    height:30px;
+}
