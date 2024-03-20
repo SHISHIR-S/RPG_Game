@@ -10,10 +10,13 @@
     <div class="Header">
         <h1 class="titlee">WELCOME TO THE RPG GAME</h1>
         <nav>
-            <a href="http://127.0.0.1:5500/rpgpage.html#" rel="noopener noreferrer">Home</a>
+            <a href="http://127.0.0.1:5500/RPG_landing/rpgpage.html" rel="noopener noreferrer">Home</a>
             <a href="https://www.youtube.com/watch?v=bANjQqUVgvM" target="_blank" rel="noopener noreferrer">Enjoy some music</a>
             <a href="#">Reset Game</a>
-        </nav>
+        </nav><br>
+        <div class="" id="pointspn">
+            <span class="pointspn">YOUR POINTS:<bold><span class="" id="pntxt">0</span></bold></span>
+        </div>
     </div>
     <div class="content">
         <p>Let's walk through the game.This is a simple game based on Adventure and Murder Mystery.<br> You can choose your fvourite choice by Entering you username and saying if you're ready or not.<br> You shall not be disappointed</p><br>
@@ -30,7 +33,16 @@
         </div><br>
         <button id="opt1">Option 1</button>
         <button id="opt2">Option 2</button>
+        <div id="opttxts">
+            <p  id="opttxt1"></p>
+            <p  id="opttxt2"></p>
+        </div>
+        
         <script>
+            const pntxt = document.getElementById("pntxt");
+            let count=0;
+            const opt1 = document.getElementById("opt1");
+            const opt2 = document.getElementById("opt2");
             const advbtn = document.getElementById("advbtn");
             const mysbtn = document.getElementById("mysbtn");
             let inpname = document.getElementById("getname");
@@ -60,8 +72,26 @@
                         mysspn.textContent = "In the shadow of an eerie mansion, Whispers of a long-forgotten crime. With clues scattered like fallen leaves, The detective delves, unraveling deceit.";
                         mysbtn.disabled="true";
                         advbtn.disabled="true";
-                    }  
-            }); 
+                    } 
+                opt1.onclick=
+                    function optbtn1(){
+                        const opttxt1 = document.getElementById("opttxt1");
+                        opttxt1.innerHTML="jegwfucjwefg4fbhdoyw"
+                        opt1.disabled="true";
+                        opt2.disabled="true";
+                        count ++;
+                        pntxt.innerText=count;
+                }
+                opt2.onclick = 
+                    function optbtn2() {
+                        const opttxt2 = document.getElementById("opttxt1");
+                        opttxt1.innerHTML="ndhhf8vujdfj9"
+                        opt1.disabled = true;
+                        opt2.disabled = true;
+                        count++;
+                        pntxt.innerText = count;
+                            };
+                        });
             
 </script> 
     </div>
