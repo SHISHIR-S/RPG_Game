@@ -1,1 +1,1 @@
-A simple RPG made with the help of HTML,CSS,Javascript.
+A simple RPG made using HTML,CSS,Javascript.
