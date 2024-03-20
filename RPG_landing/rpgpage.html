@@ -48,10 +48,12 @@
             let inpname = document.getElementById("getname");
             let greetObj=document.getElementById("greet");
             greetObj.style.display="none";
+            advbtn.disabled=true;
+            mysbtn.disabled=true;
             const monsters = [{
                 Name:"Slime",
                 Level:1,
-                Heath:10},{
+                Health:10},{
                 Name:"Goblin",
                 Level:5,
                 Health:30
@@ -70,11 +72,30 @@
                         greetObj.innerHTML+="Hello, Nice to meet you  "+inpname.value+".";
                         namebtn.disabled="true"
                     }
+                advbtn.disabled=false;
+                mysbtn.disabled=false;
                     }
                 advbtn.onclick=
                     function advtxt() {
                         const advspn = document.getElementById("advspn")
                         advspn.textContent = "Deep within the ancient forest, A brave adventurer seeks his fate. With sword in hand and heart alight, He journeys forth into the night.";
+                        opt1.onclick=
+                        function optbtn1(){
+                            const opttxt1 = document.getElementById("opttxt1");
+                            opttxt1.innerHTML="A slime appears in front of you. Do you wish to fight it?"
+                            opt1.disabled="true";
+                            opt2.disabled="true";
+                            count ++;
+                            pntxt.innerText=count;
+                    }
+                        opt2.onclick = 
+                        function optbtn2() {
+                            const opttxt2 = document.getElementById("opttxt1");
+                            opttxt2.innerHTML="You fell into a ditch and got trapped with a venomous snake.Restart to play the game again"
+                            opt1.disabled = true;
+                            opt2.disabled = true;
+                            pntxt.innerText = count;
+                                };
                         mysbtn.disabled="true";
                         advbtn.disabled="true";
                     }
@@ -82,31 +103,30 @@
                     function mystxt() {
                         const mysspn = document.getElementById("mysspn")
                         mysspn.textContent = "In the shadow of an eerie mansion, Whispers of a long-forgotten crime. With clues scattered like fallen leaves, The detective delves, unraveling deceit.";
+                        opt1.onclick=
+                        function optbtn1(){
+                            const opttxt1 = document.getElementById("opttxt1");
+                            opttxt1.innerHTML="You got stabbed in the back by a robber. Restart the game if you wish to play again.";
+                            opt1.disabled="true";
+                            opt2.disabled="true";
+                            pntxt.innerText=count;
+                    }
+                        opt2.onclick = 
+                        function optbtn2() {
+                            const opttxt2 = document.getElementById("opttxt1");
+                            opttxt2.innerHTML="A dead body is in front of you. Do you wish to investigate it?";
+                            opt1.disabled = true;
+                            opt2.disabled = true;
+                            count++;
+                            pntxt.innerText = count;
                         mysbtn.disabled="true";
                         advbtn.disabled="true";
-                    } 
-                opt1.onclick=
-                    function optbtn1(){
-                        const opttxt1 = document.getElementById("opttxt1");
-                        opttxt1.innerHTML="jegwfucjwefg4fbhdoyw"
-                        opt1.disabled="true";
-                        opt2.disabled="true";
-                        count ++;
-                        pntxt.innerText=count;
+                    }
                 }
-                opt2.onclick = 
-                    function optbtn2() {
-                        const opttxt2 = document.getElementById("opttxt1");
-                        opttxt1.innerHTML="ndhhf8vujdfj9"
-                        opt1.disabled = true;
-                        opt2.disabled = true;
-                        count++;
-                        pntxt.innerText = count;
-                            };
                         });
             
 </script> 
     </div>
 
 </body>
-</html>
+</html    >
