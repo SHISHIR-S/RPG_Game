@@ -15,11 +15,17 @@
             <a href="#">Reset Game</a>
         </nav><br>
         <div class="" id="pointspn">
-            <span class="pointspn">YOUR POINTS:<bold><span class="" id="pntxt">0</span></bold></span>
+            <span class="pointspn">YOUR POINTS:<bold><span id="pntxt">0</span></bold></span> 
+        </div><br>
+        <div id="lvlspn">
+            <span class="lvlspn">YOUR LEVEL:<bold><span id="ltxt">0</span></bold></span>
+        </div><br>
+        <div id="hthspn">
+            <span class="hthspn">YOUR HEALTH:<bold><span id="htxt">100</span></bold></span>
         </div>
     </div>
     <div class="content">
-        <p>Let's walk through the game.This is a simple game based on Adventure and Murder Mystery.<br> You can choose your fvourite choice by Entering you username and saying if you're ready or not.<br> You shall not be disappointed</p><br>
+        <p>Let's walk through the game.This is a simple game based on Adventure and Murder Mystery.<br> You can choose your favourite choice by Entering you username and saying if you're ready or not.<br> You shall not be disappointed</p><br>
         <div class="boxdiv">
             <span id="namee">Enter your name: <input type="text" id="getname"><button id="namebtn">Submit</button></span><br>
             <div><p id="greet"> </p> </div>
@@ -34,13 +40,16 @@
         <button id="opt1">Option 1</button>
         <button id="opt2">Option 2</button>
         <div id="opttxts">
-            <p  id="opttxt1"></p>
-            <p  id="opttxt2"></p>
+
         </div>
         
         <script>
-            const pntxt = document.getElementById("pntxt");
             let count=0;
+            const htxt = document.getElementById("htxt")
+            const lvltxt = document.querySelector("ltxt")
+            const yesbtn = document.querySelector("yesbtn")
+            const nobtn = document.querySelector("nobtn")
+            const pntxt = document.getElementById("pntxt");
             const opt1 = document.getElementById("opt1");
             const opt2 = document.getElementById("opt2");
             const advbtn = document.getElementById("advbtn");
@@ -65,68 +74,63 @@
             document.addEventListener('DOMContentLoaded', (event) => {
                 document.getElementById("namebtn").onclick=function greetdisplay(){
                     if(getname.value===""){
-                        window.alert("Please enter a name");
-                    }
+                        window.alert("Please enter a name");}
                     else{
                         greetObj.style.display="block";
                         greetObj.innerHTML+="Hello, Nice to meet you  "+inpname.value+".";
-                        namebtn.disabled="true"
-                    }
-                advbtn.disabled=false;
-                mysbtn.disabled=false;
-                    }
+                        namebtn.disabled="true"}
+                advbtn.disabled=false; mysbtn.disabled=false;}
                 advbtn.onclick=
                     function advtxt() {
                         const advspn = document.getElementById("advspn")
                         advspn.textContent = "Deep within the ancient forest, A brave adventurer seeks his fate. With sword in hand and heart alight, He journeys forth into the night.";
                         opt1.onclick=
                         function optbtn1(){
-                            const opttxt1 = document.getElementById("opttxt1");
-                            opttxt1.innerHTML="A slime appears in front of you. Do you wish to fight it?"
-                            opt1.disabled="true";
-                            opt2.disabled="true";
+                            const opttxt = document.getElementById("opttxts");
+                            opttxt.innerHTML+=`<p>A slime appears in front of you. Do you wish to fight it?<p><br><button id="yesbtn">YES</button><button id="nobtn">NO</button>`
+                            opt1.disabled=true; opt2.disabled=true;
                             count ++;
-                            pntxt.innerText=count;
-                    }
+                            pntxt.innerText=count;}
                         opt2.onclick = 
                         function optbtn2() {
-                            const opttxt2 = document.getElementById("opttxt1");
-                            opttxt2.innerHTML="You fell into a ditch and got trapped with a venomous snake.Restart to play the game again"
-                            opt1.disabled = true;
-                            opt2.disabled = true;
-                            pntxt.innerText = count;
-                                };
-                        mysbtn.disabled="true";
-                        advbtn.disabled="true";
-                    }
+                            const opttxt = document.getElementById("opttxts");
+                            opttxt.innerHTML=`<p>You fell into a ditch and got trapped with a venomous snake.Restart to play the game again<p><br><button id="rstbt">RESET</button>`
+                            opt1.disabled = true;opt2.disabled = true;
+                            pntxt.innerText = count;};
+                        mysbtn.disabled=true;advbtn.disabled=true;}
                 mysbtn.onclick=
                     function mystxt() {
                         const mysspn = document.getElementById("mysspn")
                         mysspn.textContent = "In the shadow of an eerie mansion, Whispers of a long-forgotten crime. With clues scattered like fallen leaves, The detective delves, unraveling deceit.";
                         opt1.onclick=
                         function optbtn1(){
-                            const opttxt1 = document.getElementById("opttxt1");
-                            opttxt1.innerHTML="You got stabbed in the back by a robber. Restart the game if you wish to play again.";
-                            opt1.disabled="true";
-                            opt2.disabled="true";
-                            pntxt.innerText=count;
-                    }
+                            const opttxt = document.getElementById("opttxts");
+                            opttxt.innerHTML=`<p>You got stabbed in the back by a robber. Restart the game if you wish to play again.</p><br><button id="rstbt">RESET</button>`
+                            opt1.disabled=true; opt2.disabled=true;
+                            pntxt.innerText=count;}
                         opt2.onclick = 
                         function optbtn2() {
-                            const opttxt2 = document.getElementById("opttxt1");
-                            opttxt2.innerHTML="A dead body is in front of you. Do you wish to investigate it?";
-                            opt1.disabled = true;
-                            opt2.disabled = true;
+                            const opttxt = document.getElementById("opttxts");
+                            opttxt.innerHTML+=`<p>A dead body is in front of you. Do you wish to investigate it?</p><br><button id="yesbtn">YES</button><button id="nobtn">NO</button>` 
+                            opt1.disabled = true; opt2.disabled = true;
                             count++;
-                            pntxt.innerText = count;
-                        mysbtn.disabled="true";
-                        advbtn.disabled="true";
-                    }
-                }
-                        });
-            
+                            pntxt.innerText = count;}
+                        mysbtn.disabled=true;advbtn.disabled=true;}
+                function advtxt1(){
+                        const htxt = document.getElementById("htxt")
+                        const lvltxt = document.getElementById("ltxt")
+                        lvltxt.textContent=monsters[0].Level;
+                        htxt.textContent=monsters[0].Health;
+                        const yesbtn = document.getElementById("yesbtn");
+                        yesbtn.onclick=function plsrun(){
+                            htxt.textContent = parseInt(htxt.textContent) - 10; 
+                        };
+                        advtxt1();
+                        }
+                
+                    
+                });
 </script> 
     </div>
-
 </body>
-</html    >
+</html>

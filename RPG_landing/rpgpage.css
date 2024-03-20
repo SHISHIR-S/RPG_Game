@@ -43,3 +43,15 @@ nav a:last-child{
     border:2px solid black;
     color:brown;
 }
+.lvlspn{
+    margin-left:1000px;
+    padding:05px;
+    border:2px solid black;
+    color:red;
+}
+.hthspn{
+    margin-left:1000px;
+    padding:05px;
+    border:2px solid black;
+    color:red;
+}
