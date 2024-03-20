@@ -48,6 +48,18 @@
             let inpname = document.getElementById("getname");
             let greetObj=document.getElementById("greet");
             greetObj.style.display="none";
+            const monsters = [{
+                Name:"Slime",
+                Level:1,
+                Heath:10},{
+                Name:"Goblin",
+                Level:5,
+                Health:30
+                },{
+                Name:"Wyvern",
+                Level:15,
+                Health:50
+                }]
             document.addEventListener('DOMContentLoaded', (event) => {
                 document.getElementById("namebtn").onclick=function greetdisplay(){
                     if(getname.value===""){
