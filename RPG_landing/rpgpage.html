@@ -18,10 +18,10 @@
             <span class="pointspn">YOUR POINTS:<bold><span id="pntxt">0</span></bold></span> 
         </div><br>
         <div id="lvlspn">
-            <span class="lvlspn">YOUR LEVEL:<bold><span id="ltxt">0</span></bold></span>
+            <span class="lvlspn">YOUR LEVEL:<bold><span id="lvltxt">0</span></bold></span>
         </div><br>
         <div id="hthspn">
-            <span class="hthspn">YOUR HEALTH:<bold><span id="htxt">100</span></bold></span>
+            <span class="hthspn">YOUR HEALTH:<bold><span id="hthtxt">100</span></bold></span>
         </div>
     </div>
     <div class="content">
@@ -42,13 +42,14 @@
         <div id="opttxts">
 
         </div>
+        <div id="fightxt">
+
+        </div>
         
         <script>
             let count=0;
-            const htxt = document.getElementById("htxt")
-            const lvltxt = document.querySelector("ltxt")
-            const yesbtn = document.querySelector("yesbtn")
-            const nobtn = document.querySelector("nobtn")
+            const hthtxt = document.getElementById("hthtxt")
+            const lvltxt = document.getElementById("lvltxt")
             const pntxt = document.getElementById("pntxt");
             const opt1 = document.getElementById("opt1");
             const opt2 = document.getElementById("opt2");
@@ -72,6 +73,17 @@
                 Health:50
                 }]
             document.addEventListener('DOMContentLoaded', (event) => {
+                function advtxt1(){
+                    lvltxt.textContent=monsters[0].Level;
+                    hthtxt.textContent=(hthtxt.value)-(monsters[[0].health]);
+                    const fightxt = document.getElementById("fightxt");
+                    fightxt.innerHTML= `<p>You very closely dodge the slime's attacks and hit it back. Stand proud warrior, you have won your first battle but there are many more to go</p><br><p>If you want to continue,press continue</p><br><button id="cntbtn">CONTINUE</button>`
+                }
+                function advtxt2(){
+                    hthtxt.textContent=0;
+                    const fightxt = document.getElementById("fightxt");
+                    fightxt.innerHTML = `<p>The slime got agitated and attacks you and you are dead now :( </p><br>`;
+                }
                 document.getElementById("namebtn").onclick=function greetdisplay(){
                     if(getname.value===""){
                         window.alert("Please enter a name");}
@@ -89,15 +101,22 @@
                             const opttxt = document.getElementById("opttxts");
                             opttxt.innerHTML+=`<p>A slime appears in front of you. Do you wish to fight it?<p><br><button id="yesbtn">YES</button><button id="nobtn">NO</button>`
                             opt1.disabled=true; opt2.disabled=true;
-                            count ++;
-                            pntxt.innerText=count;}
-                        opt2.onclick = 
+                            count +=50;
+                            pntxt.innerText=count;
+                            window.alert("You got 50 points!");
+                            const yesbtn = document.getElementById("yesbtn")
+                            yesbtn.onclick=advtxt1;
+                            const nobtn = document.getElementById("nobtn");
+                            nobtn.onclick = advtxt2;
+                            
+                            }
+                        opt2.onclick =  
                         function optbtn2() {
                             const opttxt = document.getElementById("opttxts");
                             opttxt.innerHTML=`<p>You fell into a ditch and got trapped with a venomous snake.Restart to play the game again<p><br><button id="rstbt">RESET</button>`
                             opt1.disabled = true;opt2.disabled = true;
-                            pntxt.innerText = count;};
-                        mysbtn.disabled=true;advbtn.disabled=true;}
+                            pntxt.innerText = count;
+                            }
                 mysbtn.onclick=
                     function mystxt() {
                         const mysspn = document.getElementById("mysspn")
@@ -113,23 +132,15 @@
                             const opttxt = document.getElementById("opttxts");
                             opttxt.innerHTML+=`<p>A dead body is in front of you. Do you wish to investigate it?</p><br><button id="yesbtn">YES</button><button id="nobtn">NO</button>` 
                             opt1.disabled = true; opt2.disabled = true;
-                            count++;
-                            pntxt.innerText = count;}
+                            count+=50;
+                            pntxt.innerText = count;
+                            window.alert("You got 50 points!");}
                         mysbtn.disabled=true;advbtn.disabled=true;}
-                function advtxt1(){
-                        const htxt = document.getElementById("htxt")
-                        const lvltxt = document.getElementById("ltxt")
-                        lvltxt.textContent=monsters[0].Level;
-                        htxt.textContent=monsters[0].Health;
-                        const yesbtn = document.getElementById("yesbtn");
-                        yesbtn.onclick=function plsrun(){
-                            htxt.textContent = parseInt(htxt.textContent) - 10; 
-                        };
-                        advtxt1();
+            
+
+
                         }
-                
-                    
-                });
+            });
 </script> 
     </div>
 </body>
