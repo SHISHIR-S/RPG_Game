@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +36,7 @@
         </div>
         <div class="spnbox">
             <p id="advspn"></p>
-            <p id="mysspn"></p>
+            <p id="myspn"></p>
         </div><br>
         <button id="opt1">Option 1</button>
         <button id="opt2">Option 2</button>
@@ -91,7 +92,9 @@
                         greetObj.style.display="block";
                         greetObj.innerHTML+="Hello, Nice to meet you  "+inpname.value+".";
                         namebtn.disabled="true"}
-                advbtn.disabled=false; mysbtn.disabled=false;}
+                advbtn.disabled=false; 
+                mysbtn.disabled=false;
+            }
                 advbtn.onclick=
                     function advtxt() {
                         const advspn = document.getElementById("advspn")
@@ -116,30 +119,35 @@
                             opttxt.innerHTML=`<p>You fell into a ditch and got trapped with a venomous snake.Restart to play the game again<p><br><button id="rstbt">RESET</button>`
                             opt1.disabled = true;opt2.disabled = true;
                             pntxt.innerText = count;
-                            }
+                            }}
+                    advbtn.disabled=true; 
+                    mysbtn.disabled=true;
                 mysbtn.onclick=
                     function mystxt() {
-                        const mysspn = document.getElementById("mysspn")
-                        mysspn.textContent = "In the shadow of an eerie mansion, Whispers of a long-forgotten crime. With clues scattered like fallen leaves, The detective delves, unraveling deceit.";
+                        const myspn = document.getElementById("myspn");
+                        myspn.textContent = "In the shadow of an eerie mansion, Whispers of a long-forgotten crime. With clues scattered like fallen leaves, The detective delves, unraveling deceit.";
                         opt1.onclick=
                         function optbtn1(){
                             const opttxt = document.getElementById("opttxts");
                             opttxt.innerHTML=`<p>You got stabbed in the back by a robber. Restart the game if you wish to play again.</p><br><button id="rstbt">RESET</button>`
-                            opt1.disabled=true; opt2.disabled=true;
+                            opt1.disabled=true; 
+                            opt2.disabled=true;
                             pntxt.innerText=count;}
                         opt2.onclick = 
                         function optbtn2() {
                             const opttxt = document.getElementById("opttxts");
                             opttxt.innerHTML+=`<p>A dead body is in front of you. Do you wish to investigate it?</p><br><button id="yesbtn">YES</button><button id="nobtn">NO</button>` 
-                            opt1.disabled = true; opt2.disabled = true;
+                            opt1.disabled = true; 
+                            opt2.disabled = true;
                             count+=50;
                             pntxt.innerText = count;
                             window.alert("You got 50 points!");}
-                        mysbtn.disabled=true;advbtn.disabled=true;}
-            
-
-
                         }
+                        mysbtn.disabled=true;
+                        advbtn.disabled=true;
+
+
+                        
             });
 </script> 
     </div>
