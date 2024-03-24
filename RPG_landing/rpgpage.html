@@ -76,7 +76,7 @@
             document.addEventListener('DOMContentLoaded', (event) => {
                 function advtxt1(){
                     lvltxt.textContent=monsters[0].Level;
-                    hthtxt.textContent=(hthtxt.value)-(monsters[[0].health]);
+                    hthtxt.textContent+=parseInt((hthtxt.textContent)-(monsters[0].Health));
                     const fightxt = document.getElementById("fightxt");
                     fightxt.innerHTML= `<p>You very closely dodge the slime's attacks and hit it back. Stand proud warrior, you have won your first battle but there are many more to go</p><br><p>If you want to continue,press continue</p><br><button id="cntbtn">CONTINUE</button>`
                 }
@@ -84,6 +84,9 @@
                     hthtxt.textContent=0;
                     const fightxt = document.getElementById("fightxt");
                     fightxt.innerHTML = `<p>The slime got agitated and attacks you and you are dead now :( </p><br>`;
+                }
+                function mystxt1(){
+
                 }
                 document.getElementById("namebtn").onclick=function greetdisplay(){
                     if(getname.value===""){
@@ -94,7 +97,7 @@
                         namebtn.disabled="true"}
                 advbtn.disabled=false; 
                 mysbtn.disabled=false;
-            }
+                    }
                 advbtn.onclick=
                     function advtxt() {
                         const advspn = document.getElementById("advspn")
@@ -119,9 +122,10 @@
                             opttxt.innerHTML=`<p>You fell into a ditch and got trapped with a venomous snake.Restart to play the game again<p><br><button id="rstbt">RESET</button>`
                             opt1.disabled = true;opt2.disabled = true;
                             pntxt.innerText = count;
-                            }}
+                            }
                     advbtn.disabled=true; 
-                    mysbtn.disabled=true;
+                    mysbtn.disabled=true;}
+                    
                 mysbtn.onclick=
                     function mystxt() {
                         const myspn = document.getElementById("myspn");
@@ -142,9 +146,9 @@
                             count+=50;
                             pntxt.innerText = count;
                             window.alert("You got 50 points!");}
-                        }
-                        mysbtn.disabled=true;
-                        advbtn.disabled=true;
+                mysbtn.disabled=true;
+                advbtn.disabled=true; }
+                
 
 
                         
