@@ -76,7 +76,8 @@
             document.addEventListener('DOMContentLoaded', (event) => {
                 function advtxt1(){
                     lvltxt.textContent=monsters[0].Level;
-                    hthtxt.textContent+=parseInt((hthtxt.textContent)-(monsters[0].Health));
+                    hthtxt.textContent+=parseInt((hthtxt.textContent))-parseInt((monsters[0].Health));
+                    hthtxt.textContent = hthtxt.textContent;
                     const fightxt = document.getElementById("fightxt");
                     fightxt.innerHTML= `<p>You very closely dodge the slime's attacks and hit it back. Stand proud warrior, you have won your first battle but there are many more to go</p><br><p>If you want to continue,press continue</p><br><button id="cntbtn">CONTINUE</button>`
                 }
@@ -86,7 +87,7 @@
                     fightxt.innerHTML = `<p>The slime got agitated and attacks you and you are dead now :( </p><br>`;
                 }
                 function mystxt1(){
-
+                    
                 }
                 document.getElementById("namebtn").onclick=function greetdisplay(){
                     if(getname.value===""){
@@ -97,7 +98,9 @@
                         namebtn.disabled="true"}
                 advbtn.disabled=false; 
                 mysbtn.disabled=false;
+                
                     }
+                
                 advbtn.onclick=
                     function advtxt() {
                         const advspn = document.getElementById("advspn")
@@ -114,7 +117,7 @@
                             yesbtn.onclick=advtxt1;
                             const nobtn = document.getElementById("nobtn");
                             nobtn.onclick = advtxt2;
-                            
+
                             }
                         opt2.onclick =  
                         function optbtn2() {
